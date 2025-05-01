@@ -1,0 +1,90 @@
+<main style="margin-top: 50px">
+  <div class="container py-5">
+    <h2 class="text-center mb-5 fw-bold text-black">
+      <br />¡HABLEMOS DE TU PRÓXIMO VIAJE!
+    </h2>
+    <div class="row text-center mb-3">
+      <div class="col-md-4 mb-4 info-contacto">
+        <div class="icono-contacto"><i class="fas fa-phone-alt"></i></div>
+        <strong style="color: #000">Teléfono</strong>
+        <p style="color: #000">+51 987 654 321</p>
+      </div>
+      <div class="col-md-4 mb-4 info-contacto">
+        <div class="icono-contacto"><i class="fas fa-globe"></i></div>
+        <strong style="color: #000">Sitio Web</strong>
+        <p style="color: #000">www.vsptours.com</p>
+      </div>
+      <div class="col-md-4 mb-4 info-contacto">
+        <div class="icono-contacto"><i class="fas fa-envelope"></i></div>
+        <strong style="color: #000">Email</strong>
+        <p style="color: #000">vsptours@gmail.com</p>
+      </div>
+    </div>
+
+    <hr class="my-4" />
+
+    <div class="row align-items-stretch mt-5">
+      <div class="col-md-6 mb-4 d-flex">
+        <div class="form-container w-100">
+          <h5 class="text-primary">¡Escríbenos sin compromiso!</h5>
+          <p class="text-muted">Cotiza gratis y comienza tu viaje ideal.</p>
+
+          <form id="contactForm" onsubmit="enviarCorreo(event)">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                name="nombre"
+                placeholder="Nombres"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <input
+                type="tel"
+                class="form-control"
+                id="telefono"
+                name="telefono"
+                placeholder="Teléfono"
+                pattern="[0-9]{7,12}"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control"
+                id="mensaje"
+                name="mensaje"
+                rows="8"
+                placeholder="Tu Mensaje"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-enviar">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4 d-flex align-items-stretch">
+        <img
+          src="/public/images/Contacto.png"
+          alt="Contacto"
+          class="img-fluid contact-img"
+        />
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+</main>

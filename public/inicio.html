@@ -1,0 +1,401 @@
+<body>
+  <main>
+    <div
+      class="back d-flex align-items-start justify-content-center justify-content-md-start p-3 p-md-5"
+    >
+      <div class="hero-content text-center text-md-start mx-auto mx-md-0">
+        <span
+          class="fs-6 text-white bg-danger px-3 px-md-4 py-1 py-md-2 rounded-pill fw-bold"
+        >
+          Viaja con comodidad
+        </span>
+        <h2 class="display-4 fw-bold text-black pt-2 mb-3">
+          Los mejores destinos <br class="d-none d-sm-block" />
+          turísticos del Perú
+        </h2>
+        <p class="fw-bold fs-4 fs-md-3 pt-1 pb-3">
+          Vive experiencias únicas con VSP Tours
+        </p>
+        <button class="btn btn-primary px-3 px-md-4 py-2 rounded-lg fw-bold">
+          Explorar Destinos
+        </button>
+      </div>
+    </div>
+
+    <section class="py-5 bg-gradient" id="carrusel">
+      <div class="container">
+        <h5 class="fw-bold text-center mb-5 text-dark display-6 text-uppercase">
+          ¡Explora Nuestros Destinos Más Increíbles!
+        </h5>
+
+        <div
+          id="carouselDestinos"
+          class="carousel slide carousel-fade"
+          data-bs-ride="carousel"
+          data-bs-interval="3000"
+        >
+          <div class="carousel-inner rounded-4 shadow-lg overflow-hidden">
+            <div class="carousel-item active">
+              <div class="ratio ratio-16x9">
+                <img
+                  src="/public/images/maachupicchu.jpg"
+                  class="d-block w-100 object-fit-cover"
+                  alt="Machu Picchu"
+                />
+              </div>
+              <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3">
+                <h5 class="text-light fw-bold fs-4">Cusco y Machu Picchu</h5>
+                <p class="text-light fs-6">
+                  Explora la maravilla del mundo con guías expertos y todo
+                  incluido.
+                </p>
+                <a href="#destinos" class="btn btn-light btn-sm"
+                  >Descubre Más</a
+                >
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="ratio ratio-16x9">
+                <img
+                  src="/public/images/pexels-willianjusten-22484279.jpg"
+                  class="d-block w-100 object-fit-cover"
+                  alt="Ica y Huacachina"
+                />
+              </div>
+              <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3">
+                <h5 class="text-light fw-bold fs-4">Ica y Huacachina</h5>
+                <p class="text-light fs-6">
+                  Aventura en el desierto: buggy, sandboard y más. ¡Imperdible!
+                </p>
+                <a href="#destinos" class="btn btn-light btn-sm"
+                  >Descubre Más</a
+                >
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="ratio ratio-16x9">
+                <img
+                  src="/public/images/selva2.jpg"
+                  class="d-block w-100 object-fit-cover"
+                  alt="Selva Peruana"
+                />
+              </div>
+              <div class="carousel-caption bg-dark bg-opacity-50 rounded-3 p-3">
+                <h5 class="text-light fw-bold fs-4">Selva Peruana</h5>
+                <p class="text-light fs-6">
+                  Conecta con la naturaleza en un tour lleno de vida y cultura
+                  amazónica.
+                </p>
+                <a href="#destinos" class="btn btn-light btn-sm"
+                  >Descubre Más</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselDestinos"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-white rounded-circle p-2 shadow"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselDestinos"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-white rounded-circle p-2 shadow"
+              aria-hidden="true"
+            ></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light" id="destinos">
+      <div class="container">
+        <h2 class="text-center mb-5 fw-bold text-black">Destinos Populares</h2>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 hover-shadow">
+              <img
+                src="/public/images/maachupicchu.jpg"
+                class="card-img-top"
+                alt="Machu Picchu"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Cusco y Machu Picchu</h5>
+                <p class="card-text">
+                  Explora la maravilla del mundo con guías expertos y todo
+                  incluido.
+                </p>
+                <a href="#destinos" class="btn btn-primary w-100"
+                  >Ver Paquetes</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 hover-shadow">
+              <img
+                src="/public/images/huacachinafondo.jpg"
+                class="card-img-top"
+                alt="Ica y Huacachina"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Ica y Huacachina</h5>
+                <p class="card-text">
+                  Aventura en el desierto: buggy, sandboard y más. ¡Imperdible!
+                </p>
+                <a href="#destinos" class="btn btn-primary w-100"
+                  >Ver Paquetes</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="card h-100 shadow-sm border-0 hover-shadow">
+              <img
+                src="/public/images/beautiful-scenery-chamarel-waterfall-mauritius-cloudy-sky.jpg"
+                class="card-img-top"
+                alt="Selva Peruana"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Selva Peruana</h5>
+                <p class="card-text">
+                  Conecta con la naturaleza en un tour lleno de vida y cultura
+                  amazónica.
+                </p>
+                <a href="#destinos" class="btn btn-primary w-100"
+                  >Ver Paquetes</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-5 bg-dark text-white text-center">
+      <div class="container">
+        <h2 class="fw-bold mb-4">Conoce la experiencia VSP Tours</h2>
+        <div class="ratio ratio-16x9">
+          <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/xlLhUT4hNvs"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <p
+          class="fs-6 text-white bg-danger px-3 px-md-4 py-1 py-md-2 rounded-pill fw-bold"
+        >
+          ¡Dale play y prepárate para tu próxima gran aventura!
+        </p>
+      </div>
+    </section>
+
+    <section class="py-5 bg-white" id="faq">
+      <div class="container">
+        <h2 class="text-center fw-bold mb-5 text-primary">
+          Preguntas Frecuentes
+        </h2>
+        <div class="accordion" id="faqAccordion">
+          <!-- Pregunta 1 -->
+          <div
+            class="accordion-item border border-primary-subtle rounded-3 shadow-sm mb-3"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button fw-semibold text-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq1"
+              >
+                ¿Qué incluye el paquete turístico?
+              </button>
+            </h2>
+            <div
+              id="faq1"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-dark bg-light rounded-bottom">
+                Transporte en bus moderno, hospedaje cómodo, alimentación
+                completa, entradas a los atractivos y un guía turístico
+                profesional.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="accordion-item border border-primary-subtle rounded-3 shadow-sm mb-3"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq2"
+              >
+                ¿Puedo pagar en cuotas?
+              </button>
+            </h2>
+            <div
+              id="faq2"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-dark bg-light rounded-bottom">
+                Sí, ofrecemos pagos en 2 o 3 cuotas sin intereses, dependiendo
+                del paquete. También aceptamos transferencias y pagos con Yape o
+                Plin.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="accordion-item border border-primary-subtle rounded-3 shadow-sm mb-3"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq3"
+              >
+                ¿Puedo cancelar mi viaje?
+              </button>
+            </h2>
+            <div
+              id="faq3"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-dark bg-light rounded-bottom">
+                Sí, puedes cancelar hasta 72 horas antes del viaje para recibir
+                un reembolso completo. Después de ese plazo, aplican
+                penalidades.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="accordion-item border border-primary-subtle rounded-3 shadow-sm mb-3"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq4"
+              >
+                ¿Qué destinos tienen disponibles?
+              </button>
+            </h2>
+            <div
+              id="faq4"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-dark bg-light rounded-bottom">
+                Contamos con destinos como Ica, Cuzco, Ancash, Arequipa, Huaraz,
+                Paracas y más. ¡Cada mes tenemos nuevas rutas y promociones!
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="accordion-item border border-primary-subtle rounded-3 shadow-sm mb-3"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq5"
+              >
+                ¿Los viajes son seguros?
+              </button>
+            </h2>
+            <div
+              id="faq5"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-dark bg-light rounded-bottom">
+                Absolutamente. Todos nuestros vehículos tienen revisión técnica
+                al día, choferes con experiencia y seguro para todos los
+                pasajeros.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="accordion-item border border-primary-subtle rounded-3 shadow-sm mb-3"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq6"
+              >
+                ¿Se pueden reservar asientos?
+              </button>
+            </h2>
+            <div
+              id="faq6"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-dark bg-light rounded-bottom">
+                Sí, durante el proceso de compra puedes elegir tu asiento
+                preferido según disponibilidad.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="accordion-item border border-primary-subtle rounded-3 shadow-sm mb-3"
+          >
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed fw-semibold text-primary"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faq7"
+              >
+                ¿Cómo obtengo mi código QR?
+              </button>
+            </h2>
+            <div
+              id="faq7"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body text-dark bg-light rounded-bottom">
+                Una vez completes el pago, te enviaremos un código QR por correo
+                o WhatsApp, el cual presentarás al abordar el bus.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>

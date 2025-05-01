@@ -1,0 +1,146 @@
+<footer class="footer-grad">
+  <div class="text-white py-5 mt-5 shadow-lg footer-grad footer-custom-spacing">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-4 text-center text-md-start">
+          <img
+            src="/public/images/cropped-cropped-cropped-LOGO-PAGINA-1.png"
+            alt="Logo Brytravel"
+            class="mb-3"
+            style="width: 150px"
+          />
+          <p class="text-light">
+            Tu mejor opción en transporte turístico por Perú. Paseos exclusivos,
+            excursiones y servicios personalizados con confort y seguridad.
+          </p>
+          <a href="#" class="btn btn-warning mt-3 text-black"
+            >Más sobre nosotros</a
+          >
+        </div>
+
+        <div class="col-md-4">
+          <h3 class="text-orange fw-bold">Enlaces rápidos</h3>
+          <ul class="list-unstyled mt-3">
+            <li>
+              <a
+                href="#destinos"
+                class="text-light text-decoration-none d-block py-1 link-hover"
+                >Destinos</a
+              >
+            </li>
+            <li>
+              <a
+                href="#servicios"
+                class="text-light text-decoration-none d-block py-1 link-hover"
+                >Servicios</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contacto"
+                class="text-light text-decoration-none d-block py-1 link-hover"
+                >Contáctanos</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-light text-decoration-none d-block py-1 link-hover"
+                >Sobre nosotros</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-4 text-center text-md-start">
+          <h3 class="text-orange fw-bold">Síguenos</h3>
+          <div
+            class="mt-3 mb-3 d-flex justify-content-center justify-content-md-start gap-3 fs-3"
+          >
+            <a
+              href="https://www.facebook.com/vsptours/?locale=es_LA"
+              class="text-primary"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/vsptours07/?hl=es"
+              class="text-danger"
+              ><i class="fab fa-instagram"></i
+            ></a>
+
+            <a href="https://wa.me/995961432" class="text-success"
+              ><i class="fab fa-whatsapp"></i
+            ></a>
+          </div>
+          <p class="text-light">
+            Suscríbete a nuestro boletín para recibir ofertas exclusivas y
+            novedades de destinos.
+          </p>
+          <form class="d-flex mt-2" onsubmit="alertaSuscripcion(event)">
+            <input
+              id="inputCorreo"
+              type="email"
+              class="form-control rounded-start"
+              placeholder="Tu correo"
+              required
+            />
+            <button
+              type="submit"
+              id="btnSuscribirse"
+              class="btn btn-warning text-white rounded-end"
+              disabled
+            >
+              Suscribirse
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="text-center text-light mt-5 pt-4 border-top border-secondary">
+        <p>© 2024 VSP TOURS. Todos los derechos reservados.</p>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="modalSuscripcion"
+      tabindex="-1"
+      aria-labelledby="modalSuscripcionLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white rounded-4">
+          <div class="modal-header border-0">
+            <h5
+              class="modal-title w-100 text-center fw-bold text-success"
+              id="modalSuscripcionLabel"
+            >
+              <i class="fas fa-check-circle fa-2x me-2 animate-check"></i>
+              ¡Suscripción Exitosa!
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="fs-5">
+              Gracias por suscribirte a nuestro boletín. Prepárate para recibir
+              las mejores ofertas y destinos.
+            </p>
+          </div>
+          <div class="modal-footer border-0 justify-content-center">
+            <button
+              type="button"
+              class="btn btn-success px-4"
+              data-bs-dismiss="modal"
+            >
+              Aceptar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/public/js/footer.js"></script>
+</footer>
