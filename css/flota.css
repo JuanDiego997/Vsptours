@@ -3,7 +3,7 @@
   text-align: center;
   color: white;
   padding: 6rem 0;
-  background-image: url('/public/images/pexels-viajante-dibujero-2562840-4835536.jpg'); /* Fondo de imagen */
+  background-image: url('images/pexels-viajante-dibujero-2562840-4835536.jpg'); /* Fondo de imagen */
   background-position: center;
   background-size: cover; /* Asegura que la imagen cubra todo el header */
   background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */

@@ -1,10 +1,8 @@
-// Modal dinámico
 function cargarModal(titulo, descripcion) {
   document.getElementById('modalDestinoLabel').textContent = titulo;
   document.getElementById('modalDestinoContenido').textContent = descripcion;
 }
 
-// Filtro del buscador
 document
   .getElementById('buscadorDestinos')
   .addEventListener('input', function () {

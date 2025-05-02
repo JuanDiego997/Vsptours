@@ -1,0 +1,34 @@
+body {
+  background-image: url('images/ChatGPT\ Image\ 20\ abr\ 2025\,\ 12_51_31\ p.m..png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.register-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.form-icon {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 1.2rem;
+}
+
+.input-group-lg .form-control {
+  padding-left: 2.5rem;
+}
+
+.form-group {
+  position: relative;
+}
