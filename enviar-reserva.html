@@ -382,6 +382,39 @@
     </main>
 
     <script>
+document.getElementById('reservaForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // 1. Capturar los valores del formulario
+    const nombre = document.getElementById('nombre').value.trim();
+    const apellidos = document.getElementById('apellidos').value.trim();
+    const numero = document.getElementById('numero').value.trim();
+    const distrito = document.getElementById('distrito').value;
+    const correo = document.getElementById('correo').value.trim();
+    const destino = document.getElementById('destino').value.trim();
+    const pasajeros = document.getElementById('pasajeros').value.trim();
+    const movilidad = document.getElementById('movilidad').value;
+
+    // 2. Crear el mensaje para WhatsApp
+    const mensaje = `Hola, quiero reservar un viaje. Aquí están mis datos:%0A
+*Nombre:* ${nombre} ${apellidos}%0A
+*Celular:* ${numero}%0A
+*Correo:* ${correo}%0A
+*Distrito:* ${distrito}%0A
+*Destino:* ${destino}%0A
+*Pasajeros:* ${pasajeros}%0A
+*Movilidad:* ${movilidad}`;
+
+    // 3. Número de WhatsApp de destino (agrega el número de la empresa aquí)
+    const numeroWhatsApp = '51941621106'; // Reemplaza con tu número en formato internacional
+
+    // 4. Redirigir a WhatsApp
+    const url = `https://wa.me/${numeroWhatsApp}?text=${mensaje}`;
+    window.open(url, '_blank');
+
+    // 5. Aquí puedes agregar tu lógica para enviar por correo también (si ya la tienes)
+  });
+
       lucide.createIcons();
       emailjs.init('TU_USER_ID_DE_EMAILJS');
 
