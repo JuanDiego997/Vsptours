@@ -43,10 +43,14 @@ function loadPage(page) {
 
       const scriptName = `${page}.js`;
       loadScript(`js/${scriptName}`);
+
+      // Mover scroll al top después de cargar la página
+      window.scrollTo(0, 0);
     })
     .catch(() => {
       document.getElementById('content-placeholder').innerHTML =
         '<h2>Página no encontrada 😢</h2>';
+      window.scrollTo(0, 0);
     });
 }
 

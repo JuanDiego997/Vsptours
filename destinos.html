@@ -1,182 +1,363 @@
 <section class="container my-5" id="destinos">
-  <!-- Header -->
   <!-- Header estilo banner -->
-<div class="position-relative text-white text-center mb-5" style="background-image: url('images/marc-st-WKKG5oYx3qA-unsplash.jpg'); background-size: cover; background-position: center; height: 400px;">
-  <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"></div>
-
-  <div class="position-relative z-1 d-flex flex-column justify-content-center align-items-center h-100 px-3">
-    <h1 class="display-4 fw-bold">
-      🌄 Explora <span class="text-warning">Nuestros Destinos</span>
-    </h1>
-    <p class="lead fst-italic">
-      Viaja por el <strong>Perú</strong> con <span class="text-info">VSP Tours</span> 🚍<br> ¡Cotiza tu próxima aventura hoy mismo!
-    </p>
-    <a href="#contenedorDestinos" class="btn btn-warning btn-lg mt-3 shadow-sm">
-      Ver destinos <i class="bi bi-arrow-down-circle ms-2"></i>
-    </a>
+  <div
+    class="position-relative text-white text-center mb-5"
+    style="
+      background-image: url('images/marc-st-WKKG5oYx3qA-unsplash.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+    "
+  >
+    <div
+      class="position-absolute top-0 start-0 w-100 h-100 bg-dark bg-opacity-50"
+    ></div>
+    <div
+      class="position-relative z-1 d-flex flex-column justify-content-center align-items-center h-100 px-3"
+    >
+      <h1 class="display-4 fw-bold">
+        🌄 Explora <span class="text-warning">Nuestros Destinos</span>
+      </h1>
+      <p class="lead fst-italic">
+        Viaja por el <strong>Perú</strong> con
+        <span class="text-info">VSP Tours</span> 🚍<br />
+        ¡Cotiza tu próxima aventura hoy mismo!
+      </p>
+      <a class="btn btn-warning btn-lg mt-3 shadow-sm">
+        Ver destinos <i class="bi bi-arrow-down-circle ms-2"></i>
+      </a>
+    </div>
   </div>
-</div>
-
 
   <!-- Buscador -->
   <div class="mb-4">
-    <input type="text" class="form-control" id="buscadorDestinos" placeholder="Buscar destino...">
+    <input
+      type="text"
+      class="form-control"
+      id="buscadorDestinos"
+      placeholder="Buscar destino..."
+    />
   </div>
 
   <!-- Cards de destinos -->
   <div class="row" id="contenedorDestinos">
-    <!-- Ejemplo de destino -->
+    <!-- Ica -->
     <div class="col-md-4 mb-4 destino" data-nombre="Ica">
       <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
+        <img src="/images/huacachinafondo.jpg" class="card-img-top" alt="Ica" />
         <div class="card-body d-flex flex-column">
           <h5 class="card-title">Ica</h5>
           <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
           <div class="mt-auto">
             <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
+
+            <button class="mt-2 btn btn-info text-white">
+              <a href="#ica" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
+    <!-- Pozuzo -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Pozuzo">
       <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
+        <img src="/images/pozuzo.jpeg" class="card-img-top" alt="Pozuzo" />
         <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
+          <h5 class="card-title">Pozuzo</h5>
+          <p class="card-text">
+            Pueblo de colonos austro-alemanes en medio de la selva.
+          </p>
           <div class="mt-auto">
             <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Huancayo">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Huancayo</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 mb-4 destino" data-nombre="Ica">
-      <div class="card h-100 shadow">
-        <img src="images/pexels-willianjusten-22484279.jpg" class="card-img-top" alt="Ica">
-        <div class="card-body d-flex flex-column">
-          <h5 class="card-title">Ica</h5>
-          <p class="card-text">Dunas, viñedos y la mística Huacachina.</p>
-          <div class="mt-auto">
-            <button class="btn btn-warning me-2">Cotizar ahora</button>
-            <button class="btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modalDestino" onclick="cargarModal('Ica', 'Descubre Huacachina, viñedos y más maravillas del desierto.')">Ver más</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#pozuzo" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Oxapampa -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Oxapampa">
+      <div class="card h-100 shadow">
+        <img src="images/oxapampa.jpg" class="card-img-top" alt="Oxapampa" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Oxapampa</h5>
+          <p class="card-text">Montañas, café y tradiciones austro-alemanas.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
 
- 
+            <button class="btn btn-info text-white">
+              <a href="#oxapampa" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lunahuaná -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Lunahuaná">
+      <div class="card h-100 shadow">
+        <img src="images/lunahuana.jpeg" class="card-img-top" alt="Lunahuaná" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Lunahuaná</h5>
+          <p class="card-text">Aventura, río y vinos en el valle de Cañete.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#lunahuana" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Huancaya -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Huancaya">
+      <div class="card h-100 shadow">
+        <img src="/images/huancaya.jpg" class="card-img-top" alt="Huancaya" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Huancaya</h5>
+          <p class="card-text">Cascadas de ensueño en la sierra de Lima.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#huancaya" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Churín -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Churín">
+      <div class="card h-100 shadow">
+        <img src="/images/churin.jpeg" class="card-img-top" alt="Churín" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Churín</h5>
+          <p class="card-text">Relájate en sus famosos baños termales.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#churin" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4 destino" data-nombre="Huaraz">
+      <div class="card h-100 shadow">
+        <img src="/images/huaraz.jpeg" class="card-img-top" alt="Huaraz" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Huaraz</h5>
+          <p class="card-text">
+            Cordillera Blanca, lagunas y nevados imponentes.
+          </p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+            <button class="btn btn-info text-white">
+              <a href="#huaraz" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AYACUCHO -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Ayacucho">
+      <div class="card h-100 shadow">
+        <img src="/images/ayacucho.jpeg" class="card-img-top" alt="Ayacucho" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Ayacucho</h5>
+          <p class="card-text">Ciudad de iglesias y tradiciones andinas.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#ayacucho" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HUANCAVELICA -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Huancavelica">
+      <div class="card h-100 shadow">
+        <img
+          src="images/huancavelica.jpg"
+          class="card-img-top"
+          alt="Huancavelica"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Huancavelica</h5>
+          <p class="card-text">Arquitectura colonial, tren macho y termales.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#huancavelica" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARACAS -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Paracas">
+      <div class="card h-100 shadow">
+        <img src="images/paracas.jpg" class="card-img-top" alt="Paracas" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Paracas</h5>
+          <p class="card-text">Reserva natural, islas Ballestas y playa.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#paracas" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LA MERCED -->
+    <div class="col-md-4 mb-4 destino" data-nombre="La Merced">
+      <div class="card h-100 shadow">
+        <img src="images/lamerced.jpg" class="card-img-top" alt="La Merced" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">La Merced</h5>
+          <p class="card-text">Selva central con cascadas y frutas exóticas.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#lamerced" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CAJAMARCA -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Cajamarca">
+      <div class="card h-100 shadow">
+        <img
+          src="/images/cajamarca.webp"
+          class="card-img-top"
+          alt="Cajamarca"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Cajamarca</h5>
+          <p class="card-text">
+            Historia inca, aguas termales y arquitectura colonial.
+          </p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#cajamarca" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PUCALLPA -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Pucallpa">
+      <div class="card h-100 shadow">
+        <img src="images/pucallpa.jpg" class="card-img-top" alt="Pucallpa" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Pucallpa</h5>
+          <p class="card-text">
+            Aventura amazónica, cultura shipiba y lagunas.
+          </p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#pucallpa" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECUAY -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Recuay">
+      <div class="card h-100 shadow">
+        <img src="images/recuay.jpg" class="card-img-top" alt="Recuay" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Recuay</h5>
+          <p class="card-text">
+            Puerta de ingreso al Parque Nacional Huascarán.
+          </p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#recuay" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CERRO DE PASCO -->
+    <div class="col-md-4 mb-4 destino" data-nombre="Cerro de Pasco">
+      <div class="card h-100 shadow">
+        <img
+          src="images/cerrodepasco.jpeg"
+          class="card-img-top"
+          alt="Cerro de Pasco"
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">Cerro de Pasco</h5>
+          <p class="card-text">Ciudad minera a más de 4300 msnm.</p>
+          <div class="mt-auto">
+            <button class="btn btn-warning me-2">Cotizar ahora</button>
+
+            <button class="btn btn-info text-white">
+              <a href="#cerrodepasco" class="text-white text-decoration-none"
+                >¿Qué puedo hacer aquí?</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
-
-<!-- Modal -->
-<div class="modal fade" id="modalDestino" tabindex="-1" aria-labelledby="modalDestinoLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content shadow">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalDestinoLabel">Título del destino</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      <div class="modal-body" id="modalDestinoContenido">
-        <!-- Contenido del destino aquí -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div
