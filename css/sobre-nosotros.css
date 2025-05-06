@@ -1,0 +1,35 @@
+.bg-custom {
+  background-color: #f0f8ff;
+}
+.section-title {
+  font-weight: bold;
+  color: #3b6f7b;
+  margin-bottom: 30px;
+}
+.icon-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+  text-align: center;
+}
+.icon-box i {
+  font-size: 40px;
+  color: #3b6f7b;
+}
+.bg-main {
+  background-image: url('/images/busbanner.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+.about-img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+.about-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
