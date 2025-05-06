@@ -8,6 +8,13 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors',
 }).addTo(map);
 
+// Limitar el área visible a Lima (aproximadamente)
+const limaBounds = [
+  [-12.305, -77.1674], // Suroeste de Lima
+  [-11.7439, -76.6782], // Noroeste de Lima
+];
+map.setMaxBounds(limaBounds);
+
 map.on('click', async function (e) {
   if (marker) {
     marker.setLatLng(e.latlng);
@@ -21,6 +28,19 @@ map.on('click', async function (e) {
     const response = await fetch(url);
     const data = await response.json();
     const direccion = data.display_name || 'Dirección no encontrada';
+
+    // Validar que la ubicación esté dentro de Lima
+    if (
+      e.latlng.lat < limaBounds[0][0] ||
+      e.latlng.lat > limaBounds[1][0] ||
+      e.latlng.lng < limaBounds[0][1] ||
+      e.latlng.lng > limaBounds[1][1]
+    ) {
+      mostrarError(
+        'La ubicación seleccionada no está dentro de Lima. Por favor, selecciona una ubicación dentro de Lima.'
+      );
+      return;
+    }
 
     // Guardamos y mostramos la dirección
     document.getElementById('ubicacion').value = direccion;
@@ -81,7 +101,7 @@ document.getElementById('reservaForm').addEventListener('submit', function (e) {
     month: 'long',
     day: 'numeric',
   });
-  const mensaje = `Hola, quiero reservar un viaje. Aquí están mis datos:%0A
+  const mensaje = `Hola, quiero reservar un viaje. Aquí están mis datos:
 *Nombre:* ${nombre} ${apellidos}
 *Celular:* ${numero.value}
 *Correo:* ${correo.value}
@@ -111,16 +131,37 @@ document.getElementById('reservaForm').addEventListener('submit', function (e) {
 });
 
 function mostrarError(mensaje) {
+  // Mostrar el fondo semitransparente
+  document.getElementById('modal-overlay').style.display = 'block';
+
+  // Mostrar el modal con la clase 'active' para la animación
+  const modal = document.getElementById('modal');
+  modal.classList.add('active');
+
+  // Mostrar el mensaje de error
   document.getElementById('modalMensaje').innerText = mensaje;
-  document.getElementById('modal').classList.remove('hidden');
+}
+
+// Cerrar el modal
+function cerrarModal() {
+  // Ocultar el fondo semitransparente y el modal con animación
+  document.getElementById('modal-overlay').style.display = 'none';
+
+  const modal = document.getElementById('modal');
+  modal.classList.remove('active'); // Eliminar la clase para la animación
 }
 
 const DateTime = luxon.DateTime;
 
 document.getElementById('fechaViaje').addEventListener('change', function () {
-  const inputDate = this.value;
+  const inputDate = this.value; // La fecha en formato YYYY-MM-DD
   if (inputDate) {
-    const fecha = DateTime.fromISO(inputDate).setLocale('es');
+    // Crear un objeto DateTime directamente desde el valor del input
+    const fecha = DateTime.fromISO(inputDate, { zone: 'local' }).setLocale(
+      'es'
+    );
+
+    // Obtener la fecha formateada en español
     const fechaFormateada = fecha.toLocaleString(DateTime.DATE_HUGE); // Ej: "martes, 5 de mayo de 2025"
     document.getElementById('fechaLegible').textContent = fechaFormateada;
   }
@@ -128,24 +169,29 @@ document.getElementById('fechaViaje').addEventListener('change', function () {
 
 const inputFecha = document.getElementById('fechaViaje');
 
+// Definir el mínimo y máximo de la fecha
 const hoy = new Date();
 const manana = new Date(hoy);
-manana.setDate(manana.getDate() + 1);
+manana.setDate(manana.getDate() + 1); // Día siguiente
 
 const maximo = new Date(hoy);
-maximo.setFullYear(maximo.getFullYear() + 1);
+maximo.setFullYear(maximo.getFullYear() + 1); // Un año después
 
+// Convertir a formato YYYY-MM-DD
 const formato = (fecha) => fecha.toISOString().split('T')[0];
 
 inputFecha.min = formato(manana);
 inputFecha.max = formato(maximo);
 
+// Usar Luxon para formatear la fecha en formato 'es-PE' (español de Perú)
 inputFecha.addEventListener('change', function () {
-  const fecha = new Date(this.value);
-  if (!isNaN(fecha)) {
-    const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
-    document.getElementById('fechaLegible').textContent =
-      fecha.toLocaleDateString('es-PE', opciones);
+  const inputDate = this.value; // La fecha en formato YYYY-MM-DD
+  if (inputDate) {
+    const fecha = DateTime.fromISO(inputDate, { zone: 'local' }).setLocale(
+      'es'
+    );
+    const fechaFormateada = fecha.toLocaleString(DateTime.DATE_HUGE); // Ej: "martes, 5 de mayo de 2025"
+    document.getElementById('fechaLegible').textContent = fechaFormateada;
   } else {
     document.getElementById('fechaLegible').textContent = 'Ninguna';
   }

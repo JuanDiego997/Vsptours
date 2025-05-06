@@ -1,0 +1,61 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro y semitransparente */
+  display: none; /* Ocultar por defecto */
+  z-index: 999; /* Asegurarse de que esté encima de otros elementos */
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrado absoluto */
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  width: 80%; /* Ajusta el tamaño del modal */
+  max-width: 500px; /* Máximo tamaño */
+  text-align: center;
+  z-index: 1000; /* Modal debe estar encima del fondo */
+  display: none; /* Ocultar por defecto */
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Animación de aparición */
+}
+
+.modal.active {
+  display: block; /* Mostrar el modal */
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1); /* Animación al aparecer */
+}
+
+.modal p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modal button {
+  background-color: #f39c12; /* Color de fondo (puedes cambiarlo) */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modal button:hover {
+  background-color: #e67e22; /* Cambio de color al hacer hover */
+}
+
+.modal button:focus {
+  outline: none;
+}
