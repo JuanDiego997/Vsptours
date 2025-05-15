@@ -1,6 +1,5 @@
 lucide.createIcons();
-emailjs.init('TU_USER_ID_DE_EMAILJS');
-
+emailjs.init('c7NApXMmxX3q0Faeh');
 let marker;
 
 const map = L.map('map').setView([-12.0464, -77.0428], 13);
@@ -112,14 +111,14 @@ document.getElementById('reservaForm').addEventListener('submit', function (e) {
 *Fecha del viaje:* ${fechaFormateada}
 *Ubicación de recojo:* ${ubicacion}`;
 
-  const numeroWhatsApp = '51941621106';
+  const numeroWhatsApp = '51928626343';
   const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(
     mensaje
   )}`;
   window.open(url, '_blank');
 
   // 4. Envío por correo usando EmailJS
-  emailjs.sendForm('service_xxxxx', 'template_xxxxx', this).then(
+  emailjs.sendForm('service_v87i4vw', 'template_3fdpnur', this).then(
     function () {
       alert('¡Reserva realizada con éxito!');
     },
@@ -128,6 +127,34 @@ document.getElementById('reservaForm').addEventListener('submit', function (e) {
       alert('Hubo un error al realizar la reserva. Intenta nuevamente.');
     }
   );
+
+  // 5. Enviar una confirmación al usuario
+  const confirmationMessage = `¡Hola ${nombre}!
+
+Gracias por tu reserva. Aquí están los detalles:
+
+*Destino:* ${destino}
+*Fecha del viaje:* ${fechaFormateada}
+*Pasajeros:* ${pasajeros}
+*Ubicación de recojo:* ${ubicacion}
+
+Nos pondremos en contacto contigo pronto para confirmar tu viaje.
+
+¡Gracias por elegirnos!`;
+
+  emailjs
+    .send('service_v87i4vw', 'template_oo8k09b', {
+      correo_usuario: correo.value, // Asegúrate de tener este campo en tu plantilla de correo de confirmación
+      mensaje: confirmationMessage,
+    })
+    .then(
+      function () {
+        console.log('Correo de confirmación enviado');
+      },
+      function (error) {
+        console.error('Error al enviar el correo de confirmación:', error);
+      }
+    );
 });
 
 function mostrarError(mensaje) {

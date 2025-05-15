@@ -1,17 +1,20 @@
 .nav-link {
   position: relative;
-  padding: 8px 16px;
+  padding: 8px 0; /* Solo padding vertical para que se expanda bien */
   color: rgb(241, 237, 237);
   transition: transform 0.2s ease, font-size 0.2s ease;
+  white-space: nowrap; /* Evita que el texto se parta en dos líneas */
+  margin-left: 22px;
+  margin-right: 22px;
 }
 
 .nav-link:hover {
-  color: rgb(248, 248, 248) !important;
+  color: rgb(238, 255, 0) !important;
   transform: scale(1);
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-decoration: none;
-  border-radius: 5px;
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -47,6 +50,37 @@
   z-index: 9999;
   width: 100%;
 }
+
+/* Para que cada li ocupe espacio igual y los links estén centrados */
+.navbar-nav {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-around; /* Espacio equitativo */
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-nav > li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Ajustamos padding horizontal para que el texto no se pegue */
+.navbar-nav .nav-link {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Sección derecha: "Llámanos" + botón reserva alineados en línea */
+.d-flex.align-items-center.ms-lg-3 {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Botón reserva y dropdown (sin tocar hover) */
 .btn-warning {
   transition: all 0.3s ease-in-out;
 }
@@ -54,4 +88,42 @@
 .btn-warning:hover {
   background-color: #f6fa0a;
   transform: scale(1.05);
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.3em;
+}
+
+.btn-outline-light {
+  border-color: rgba(255, 255, 255, 0.7);
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: #4175fc;
+}
+
+/* Responsividad: asegurar que en móviles el nav se vea bien */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navbar-nav > li {
+    flex-grow: 0; /* En móviles que no crezcan tanto */
+    margin: 5px 0;
+  }
+
+  .nav-link {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .d-flex.align-items-center.ms-lg-3 {
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
 }

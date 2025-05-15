@@ -2,7 +2,7 @@
   <div class="container">
     <a class="navbar-brand" href="#inicio">
       <img
-        src="images/cropped-cropped-cropped-LOGO-PAGINA-1.png"
+        src="/images/cropped-cropped-cropped-LOGO-PAGINA-1.png"
         alt="Brytravel"
         height="35"
       />
@@ -12,67 +12,64 @@
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
+      data-bs-target="#navbarContent"
+      aria-controls="navbarContent"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div
-      class="navi collapse navbar-collapse justify-content-between"
-      id="navbarNav"
-    >
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- Links del menú -->
         <li class="nav-item">
-          <a class="nav-link letter-spacing ms-4 text-white" href="#inicio"
+          <a class="nav-link letter-spacing text-white" href="#inicio"
             >Inicio</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link letter-spacing ms-4 text-white" href="#servicios"
+          <a class="nav-link letter-spacing text-white" href="#servicios"
             >Servicios</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link letter-spacing ms-4 text-white" href="#flota"
-            >Flota</a
-          >
+          <a class="nav-link letter-spacing text-white" href="#flota">Flota</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link letter-spacing ms-4 text-white" href="#destinos"
+          <a class="nav-link letter-spacing text-white" href="#destinos"
             >Destinos</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link letter-spacing ms-4 text-white" href="#contacto"
-            >Contacto</a
+          <a class="nav-link letter-spacing text-white" href="#contacto"
+            >Consultar</a
           >
         </li>
         <li class="nav-item">
           <a
-            class="nav-link letter-spacing ms-4 text-white"
+            class="nav-link letter-spacing text-white"
             href="/sobre-nosotros.html"
             >Sobre nosotros</a
           >
         </li>
       </ul>
 
-      <!-- Sección para 'Llámanos' y el botón de reserva -->
-      <div class="d-flex align-items-center mt-3 mt-lg-0 ms-auto">
-        <!-- 'Llámanos' -->
+      <div
+        class="d-flex align-items-center flex-column flex-lg-row gap-3 mt-3 mt-lg-0"
+      >
+        <!-- Llamanos: solo visible en lg+ -->
+       <div class="d-flex align-items-center ms-lg-3">
         <div class="text-white me-3 d-none d-lg-block">
           <p class="mb-0">Llámanos:</p>
           <p class="fw-bold mb-0">+51 928 626 343</p>
         </div>
-
-        <!-- Botón de reserva -->
+        <a href="enviar-reserva.html" class="btn btn-warning text-dark fw-bold">
+          <i class="bi bi-journal"></i> Reserva ahora
+        </a>
+        <!-- Dropdown Usuario -->
+        
       </div>
     </div>
-    <a href="enviar-reserva.html" class="btn btn-warning text-dark fw-bold">
-      <i class="bi bi-journal"></i> Reserva <br />
-      ahora
-    </a>
   </div>
 </nav>

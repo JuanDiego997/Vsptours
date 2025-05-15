@@ -59,3 +59,17 @@
 .modal button:focus {
   outline: none;
 }
+
+.input {
+  @apply w-full border rounded px-3 py-2 focus:outline-none focus:ring focus:ring-primary;
+}
+/* Asegura que los inputs sean visibles */
+input,
+select {
+  background-color: #f9fafb;
+  color: #333;
+}
+input:focus,
+select:focus {
+  background-color: #ffffff;
+}
