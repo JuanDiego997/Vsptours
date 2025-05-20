@@ -1,28 +1,60 @@
+// Inicialización de EmailJS
 (function () {
-  // Inicializa EmailJS con tu clave pública (ya está correcta)
   emailjs.init('q1_PHTEbMiTgDJdCc');
 })();
 
+// Envío del formulario con doble plantilla
 function enviarCorreo(e) {
-  e.preventDefault(); // Evita el comportamiento por defecto del formulario
+  e.preventDefault();
 
-  const form = document.getElementById('contactForm'); // Obtén el formulario
+  const form = document.getElementById('contactForm');
 
-  // Enviar el formulario usando el primer template
   emailjs
     .sendForm('service_bj9l6ef', 'template_3l71ex2', form)
     .then(() => {
       console.log('Correo enviado a la empresa correctamente.');
-
-      // Después de enviar el primer correo, enviar el segundo (copia al usuario)
       return emailjs.sendForm('service_bj9l6ef', 'template_m65w6kr', form);
     })
     .then(() => {
-      alert('¡Mensaje enviado! Te hemos enviado una copia.');
-      form.reset(); // Resetea el formulario después de enviar el mensaje
+      mostrarModal(
+        '¡Mensaje enviado!',
+        'Te hemos enviado una copia a tu correo. Gracias por contactarnos.'
+      );
+      form.reset();
     })
     .catch((error) => {
       console.error('Error al enviar el correo:', error);
-      alert('Error al enviar mensaje. Inténtalo de nuevo.'); // Muestra un mensaje de error si algo falla
+      mostrarModal(
+        'Error al enviar',
+        'Hubo un problema al enviar tu mensaje. Por favor, intenta nuevamente más tarde.'
+      );
     });
+}
+
+// Mostrar el modal con mensaje dinámico
+function mostrarModal(titulo, mensaje) {
+  const overlay = document.getElementById('modal-overlay');
+  const modal = document.getElementById('modal');
+  const iconoCheck = document.querySelector('.checkmark-container');
+  const tituloElem = document.getElementById('modalTitulo');
+  const mensajeElem = document.getElementById('modalMensaje');
+
+  // Mostrar check solo si es éxito
+  if (titulo.toLowerCase().includes('error')) {
+    iconoCheck.style.display = 'none';
+  } else {
+    iconoCheck.style.display = 'flex';
+  }
+
+  tituloElem.innerText = titulo;
+  mensajeElem.innerText = mensaje;
+
+  overlay.classList.add('active');
+  modal.classList.add('active');
+}
+
+// Cerrar el modal
+function cerrarModal() {
+  document.getElementById('modal-overlay').classList.remove('active');
+  document.getElementById('modal').classList.remove('active');
 }

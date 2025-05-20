@@ -148,6 +148,8 @@ body {
   gap: 0.5rem;
   transition: all 0.3s ease;
   margin-top: auto;
+  text-decoration: none;
+  width: 130px;
 }
 
 .more-info-btn:hover {

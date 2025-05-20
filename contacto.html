@@ -89,4 +89,35 @@
   </div>
 
   <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <div id="modal-overlay" onclick="cerrarModal()">
+    <div id="modal" onclick="event.stopPropagation()">
+      <button
+        id="modalCerrar"
+        onclick="cerrarModal()"
+        aria-label="Cerrar modal"
+      >
+        &times;
+      </button>
+      <div class="checkmark-container">
+        <svg class="checkmark" viewBox="0 0 52 52">
+          <circle
+            cx="26"
+            cy="26"
+            r="25"
+            fill="none"
+            stroke="#28a745"
+            stroke-width="4"
+          />
+          <path
+            fill="none"
+            stroke="#28a745"
+            stroke-width="4"
+            d="M14 27l7 7 16-16"
+          />
+        </svg>
+      </div>
+      <h2 id="modalTitulo"></h2>
+      <p id="modalMensaje"></p>
+    </div>
+  </div>
 </main>

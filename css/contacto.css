@@ -90,3 +90,125 @@
     height: auto;
   }
 }
+
+/* Overlay: ocupa toda la pantalla con fondo oscuro semi-transparente */
+#modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Mostrar overlay cuando tiene clase active */
+#modal-overlay.active {
+  display: flex;
+}
+
+/* Modal centrado, tamaño controlado */
+#modal {
+  background: white;
+  color: #004085; /* azul oscuro */
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 64, 133, 0.4);
+  max-width: 400px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  text-align: center;
+  position: relative;
+  display: none; /* oculto por defecto */
+  flex-direction: column;
+  align-items: center;
+  animation: modalAppear 0.3s ease forwards;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 10000;
+}
+
+/* Mostrar modal cuando tiene clase active */
+#modal.active {
+  display: flex;
+}
+
+/* Animación para el modal */
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Título */
+#modalTitulo {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Mensaje */
+#modalMensaje {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Contenedor del check animado */
+.checkmark-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+/* SVG check */
+.checkmark {
+  width: 80px;
+  height: 80px;
+  stroke: #28a745; /* verde brillante */
+  stroke-width: 6;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: strokeCheck 0.5s ease forwards;
+}
+
+/* Animación de trazo del check */
+@keyframes strokeCheck {
+  from {
+    stroke-dashoffset: 150;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Botón de cerrar */
+#modalCerrar {
+  position: absolute;
+  top: 12px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  color: #004085;
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+
+#modalCerrar:hover {
+  color: #007bff;
+}
+
+/* Scroll para texto largo si se necesita */
+#modalMensaje {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
