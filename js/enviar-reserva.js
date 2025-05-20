@@ -51,6 +51,13 @@ map.on('click', async (e) => {
   }
 });
 
+// Función para detectar si es dispositivo móvil
+function esDispositivoMovil() {
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  );
+}
+
 document.getElementById('reservaForm').addEventListener('submit', (e) => {
   e.preventDefault();
 
@@ -117,6 +124,14 @@ document.getElementById('reservaForm').addEventListener('submit', (e) => {
     day: 'numeric',
   });
 
+  if (!tipoServicio || tipoServicio === 'Selecciona') {
+    mostrarModal(
+      'Tipo de servicio faltante',
+      'Selecciona el tipo de servicio que deseas reservar.'
+    );
+    return;
+  }
+
   const mensajeWhatsApp = `Hola, quiero reservar un viaje. Aquí están mis datos:
 *Nombre:* ${nombre} ${apellidos}
 *Celular:* ${numero}
@@ -129,20 +144,23 @@ document.getElementById('reservaForm').addEventListener('submit', (e) => {
 *Fecha del viaje:* ${fechaFormateada}
 *Ubicación de recojo:* ${ubicacion}`;
 
-  if (!tipoServicio || tipoServicio === 'Selecciona') {
-    mostrarModal(
-      'Tipo de servicio faltante',
-      'Selecciona el tipo de servicio que deseas reservar.'
-    );
-    return;
+  const numeroWhatsApp = '51928626343';
+
+  let urlWhatsApp;
+
+  if (esDispositivoMovil()) {
+    // Abre app WhatsApp en móviles
+    urlWhatsApp = `whatsapp://send?phone=${numeroWhatsApp}&text=${encodeURIComponent(
+      mensajeWhatsApp
+    )}`;
+  } else {
+    // Abre WhatsApp Web en PC
+    urlWhatsApp = `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(
+      mensajeWhatsApp
+    )}`;
   }
 
-  const numeroWhatsApp = '51928626343';
-  const urlWhatsAppWeb = `https://web.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(
-    mensajeWhatsApp
-  )}`;
-
-  window.open(urlWhatsAppWeb, '_blank');
+  window.open(urlWhatsApp, '_blank');
 });
 
 // Función para mostrar modales bonitos
