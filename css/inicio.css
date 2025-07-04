@@ -227,13 +227,13 @@ body {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   50% {
     transform: scale(1.1);
   }
-}
 }
 
 .section-subtitle::before {
@@ -263,12 +263,14 @@ body {
 }
 
 @keyframes subtitleGlow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow: 0 0 10px rgba(37, 99, 235, 0.3);
     transform: scale(1);
   }
   50% {
-    text-shadow: 0 0 20px rgba(37, 99, 235, 0.6), 0 0 30px rgba(245, 158, 11, 0.4);
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.6),
+      0 0 30px rgba(245, 158, 11, 0.4);
     transform: scale(1.02);
   }
 }
@@ -571,7 +573,7 @@ body {
     padding: 0.8rem 1rem;
     max-width: 90%;
   }
-  
+
   .section-subtitle .emoji {
     font-size: 1.5rem;
   }
@@ -582,7 +584,7 @@ body {
     font-size: 1.1rem;
     padding: 0.6rem 0.8rem;
   }
-  
+
   .section-subtitle .emoji {
     font-size: 1.3rem;
   }
