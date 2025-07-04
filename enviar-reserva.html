@@ -292,25 +292,33 @@
 
                     <!-- Información adicional y enlace a flota -->
                     <div class="vehicle-info mt-4">
-                      <div class="alert alert-info d-flex align-items-center">
-                        <i class="fas fa-info-circle me-2"></i>
-                        <div class="flex-grow-1">
-                          <strong
-                            >¿Quieres conocer más sobre nuestros
-                            vehículos?</strong
-                          >
-                          <br />
-                          Revisa las características detalladas, fotos y
-                          especificaciones de cada tipo de vehículo.
-                        </div>
-                        <a
-                          href="index.html#flota"
-                          class="btn btn-outline-primary btn-sm ms-3"
-                          onclick="window.open('index.html#flota', '_blank'); return false;"
+                      <div class="alert alert-info">
+                        <div
+                          class="d-flex flex-column flex-md-row align-items-center justify-content-between"
                         >
-                          <i class="fas fa-eye me-1"></i>
-                          Ver Flota Completa
-                        </a>
+                          <div class="d-flex align-items-center mb-2 mb-md-0">
+                            <i class="fas fa-info-circle me-2"></i>
+                            <div>
+                              <strong
+                                >¿Quieres conocer más sobre nuestros
+                                vehículos?</strong
+                              >
+                              <br />
+                              Revisa las características detalladas, fotos y
+                              especificaciones de cada tipo de vehículo.
+                            </div>
+                          </div>
+                          <div class="mt-2 mt-md-0 flex-shrink-0">
+                            <a
+                              href="index.html#flota"
+                              class="btn btn-outline-primary btn-sm"
+                              onclick="window.open('index.html#flota', '_blank'); return false;"
+                            >
+                              <i class="fas fa-eye me-1"></i>
+                              Ver Flota Completa
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -355,9 +363,7 @@
                       placeholder=" "
                       style="height: 100px"
                     ></textarea>
-                    <label for="comentarios"
-                      >Comentarios o solicitudes especiales (opcional)</label
-                    >
+                    <label for="comentarios">Comentarios (opcional)</label>
                   </div>
                 </div>
 

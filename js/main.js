@@ -83,10 +83,12 @@ class VSPToursApp {
 
         // Extraer contenido principal
         const parser = new DOMParser();
-        const doc = parser.parseFromString(contentHTML, 'text/html');
-
-        // Buscar contenido en el <main> del archivo
+        const doc = parser.parseFromString(contentHTML, 'text/html'); // Buscar contenido en el <main> del archivo
         const mainElement = doc.querySelector('main');
+
+        // Primero cargar CSS específico
+        console.log('🎨 Precargando CSS...');
+        await this.loadPageCSS(pageName);
 
         if (mainElement) {
           console.log('✅ Encontrado elemento main');
@@ -107,15 +109,24 @@ class VSPToursApp {
           );
           content = content.replace(/<script[\s\S]*?<\/script>/gi, '');
 
-          document.getElementById('content-placeholder').innerHTML = content;
+          // Ocultar contenido temporalmente para evitar FOUC
+          const placeholder = document.getElementById('content-placeholder');
+          placeholder.style.opacity = '0';
+          placeholder.innerHTML = content;
+
+          // Mostrar contenido con transición suave
+          setTimeout(() => {
+            placeholder.style.transition = 'opacity 0.3s ease';
+            placeholder.style.opacity = '1';
+          }, 100);
+
           console.log('✅ Contenido inyectado en content-placeholder');
         } else {
           console.error('❌ No se encontró elemento main en', fileName);
           await this.loadDefaultContent();
         }
 
-        // Cargar CSS y JS específicos
-        await this.loadPageCSS(pageName);
+        // Cargar JavaScript específicos
         await this.loadPageJS(pageName);
         this.hideLoaders();
         this.executePageScripts(pageName);
@@ -240,20 +251,43 @@ class VSPToursApp {
       this.navigateToPage(hash);
     }
   }
-
   // Navegar a una página específica
   async navigateToPage(pageName) {
     if (pageName === this.currentPage) return;
 
     console.log('🧭 Navegando a:', pageName);
+
+    // Mostrar loader
+    this.showLoader();
+
     this.currentPage = pageName;
     window.location.hash = pageName;
 
     await this.loadMainContent();
     this.updateActiveNavLink();
+
+    // Ocultar loader
+    this.hideLoader();
   }
 
-  // Cargar CSS específico de página
+  // Mostrar loader de transición
+  showLoader() {
+    const loader = document.getElementById('spaLoader');
+    if (loader) {
+      loader.classList.add('active');
+    }
+  }
+
+  // Ocultar loader de transición
+  hideLoader() {
+    const loader = document.getElementById('spaLoader');
+    if (loader) {
+      setTimeout(() => {
+        loader.classList.remove('active');
+      }, 300);
+    }
+  }
+  // Cargar CSS específico de página con preload
   async loadPageCSS(pageName) {
     const cssFile = `css/${pageName}.css`;
 
@@ -267,15 +301,41 @@ class VSPToursApp {
     try {
       const response = await fetch(cssFile);
       if (response.ok) {
+        // Crear elemento link con preload
         const link = document.createElement('link');
-        link.rel = 'stylesheet';
+        link.rel = 'preload';
+        link.as = 'style';
         link.href = cssFile;
+
+        // Crear promesa para esperar la carga
+        const loadPromise = new Promise((resolve, reject) => {
+          link.onload = () => {
+            // Cambiar de preload a stylesheet
+            link.rel = 'stylesheet';
+            console.log(`✅ CSS precargado para ${pageName}`);
+            resolve();
+          };
+          link.onerror = () => {
+            console.log(`⚠️ Error al precargar CSS para ${pageName}`);
+            reject();
+          };
+        });
+
         document.head.appendChild(link);
-        console.log(`✅ CSS cargado para ${pageName}`);
+
+        // Esperar a que se cargue el CSS
+        await loadPromise;
+
+        // Pequeña pausa adicional para asegurar renderizado
+        await new Promise((resolve) => setTimeout(resolve, 50));
+
+        return true;
       }
     } catch (error) {
       console.log(`⚠️ No se encontró CSS para ${pageName}`);
     }
+
+    return false;
   }
 
   // Cargar JavaScript específico de página

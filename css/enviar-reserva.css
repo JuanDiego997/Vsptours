@@ -157,10 +157,11 @@ body {
 }
 
 .form-header {
-  background: var(--gradient-primary);
-  color: white;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  color: var(--dark-color);
   padding: 2rem;
   text-align: center;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .form-header h2 {
@@ -176,6 +177,7 @@ body {
 
 .reservation-form {
   padding: 2rem;
+  background: white;
 }
 
 .form-section-group {
@@ -208,76 +210,27 @@ body {
   transition: all 0.3s ease;
   font-size: 1rem;
   padding: 1.5rem 1rem 0.5rem;
-  background-color: #ffffff;
-  color: #1f2937;
 }
 
 .form-floating > .form-control:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
-  background-color: #ffffff;
-}
-
-.form-floating > .form-control::placeholder {
-  color: #9ca3af !important;
-  opacity: 1;
-  font-weight: 500;
 }
 
 .form-floating > label {
-  color: #374151 !important;
-  font-weight: 600;
-  opacity: 1;
-}
-
-.form-floating > .form-control:focus ~ label,
-.form-floating > .form-control:not(:placeholder-shown) ~ label {
-  color: var(--primary-color) !important;
-  font-weight: 600;
-  opacity: 1;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 .form-select {
   border-radius: 10px;
   border: 2px solid #e5e7eb;
   transition: all 0.3s ease;
-  background-color: #ffffff;
-  color: #1f2937;
-  font-weight: 500;
-  padding: 0.75rem 1rem;
 }
 
 .form-select:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
-  background-color: #ffffff;
-}
-
-.form-select option {
-  color: #1f2937;
-  background-color: #ffffff;
-  font-weight: 500;
-}
-
-/* Mejorar visibilidad de inputs normales */
-.form-control {
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-  border: 2px solid #e5e7eb !important;
-  font-weight: 500;
-}
-
-.form-control:focus {
-  background-color: #ffffff !important;
-  color: #1f2937 !important;
-  border-color: var(--primary-color) !important;
-  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25) !important;
-}
-
-.form-control::placeholder {
-  color: #9ca3af !important;
-  opacity: 1 !important;
-  font-weight: 500;
 }
 
 /* Vehicle Selection */
@@ -363,6 +316,10 @@ body {
   padding: 0.5rem 1rem;
   border-radius: 25px;
   transition: all 0.3s ease;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .vehicle-info .btn-outline-primary:hover {
@@ -372,8 +329,48 @@ body {
   box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
 }
 
-.vehicle-selection .row {
-  margin-bottom: 1rem;
+/* Responsive para el botón Ver Flota */
+@media (max-width: 768px) {
+  .vehicle-info .btn-outline-primary {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    margin-top: 0.8rem;
+    margin-left: 0 !important;
+    display: block;
+    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    margin: 0.8rem auto 0 auto;
+  }
+
+  .vehicle-info .alert {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .vehicle-info .alert div {
+    margin-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .vehicle-info .btn-outline-primary {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+  }
+
+  .vehicle-info .btn-outline-primary i {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .vehicle-info .btn-outline-primary {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    max-width: 180px;
+  }
 }
 
 /* Map */
@@ -627,64 +624,265 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+/* Tablets en landscape y pantallas medianas */
+@media (max-width: 1024px) {
   .hero-reserva {
     min-height: 60vh;
-    background-attachment: scroll;
+    background-attachment: scroll; /* Mejor performance en tablets */
   }
 
   .hero-title {
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
 
   .hero-subtitle {
     font-size: 1.1rem;
   }
 
-  .form-header {
-    padding: 1.5rem;
-  }
-
-  .reservation-form {
-    padding: 1rem;
-  }
-
-  .form-section-group {
-    padding: 1rem;
-  }
-
-  .summary-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .btn-submit {
-    padding: 0.875rem 2rem;
-    font-size: 1rem;
-    width: 100%;
+  .form-container {
+    padding: 2rem;
   }
 }
 
-@media (max-width: 576px) {
+/* Tablets en portrait */
+@media (max-width: 768px) {
+  .hero-reserva {
+    min-height: 50vh;
+    padding: 2rem 0;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   .hero-badges {
-    flex-direction: column;
-    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
   }
 
   .badge-item {
-    width: 100%;
-    max-width: 250px;
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
   }
 
-  .map-element {
-    height: 250px;
-  }
-
-  .contact-info,
-  .benefits-card,
-  .testimonial-card {
+  .form-container {
     padding: 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .vehicle-card {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Móviles grandes (iPhone Plus, etc.) */
+@media (max-width: 480px) {
+  .hero-reserva {
+    min-height: 45vh;
+    padding: 1.5rem 0;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.2rem;
+    padding: 0 1rem;
+  }
+
+  .hero-badges {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+  }
+
+  .badge-item {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .btn-back {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+    bottom: 1rem;
+    left: 1rem;
+  }
+
+  .form-container {
+    padding: 1rem;
+    margin: 0 0.5rem;
+    border-radius: 10px;
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-header p {
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title i {
+    font-size: 1rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 375px) {
+  .hero-reserva {
+    min-height: 40vh;
+    padding: 1rem 0;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    padding: 0 0.5rem;
+  }
+
+  .badge-item {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    min-width: 120px;
+  }
+
+  .form-container {
+    margin: 0 0.25rem;
+    padding: 0.8rem;
+  }
+
+  .form-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .btn-submit {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+  }
+}
+
+/* Landscape móvil (rotación horizontal) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-reserva {
+    min-height: 80vh;
+    padding: 1rem 0;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-badges {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.8rem;
+  }
+
+  .badge-item {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+}
+
+/* Ultra wide screens */
+@media (min-width: 1400px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .form-container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+}
+
+/* Fixes específicos para iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  .hero-reserva {
+    background-attachment: scroll;
+  }
+
+  .form-floating > .form-control {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  .form-select {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+/* Dark mode support - DESACTIVADO para mantener siempre fondo claro */
+@media (prefers-color-scheme: dark) {
+  .form-container {
+    background: white !important;
+    color: var(--dark-color) !important;
+  }
+
+  .form-floating > label {
+    color: #6b7280 !important;
+  }
+
+  .form-control {
+    background-color: white !important;
+    border-color: #e5e7eb !important;
+    color: var(--dark-color) !important;
+  }
+
+  .form-section-group {
+    background: #f8fafc !important;
+    color: var(--dark-color) !important;
   }
 }
 
